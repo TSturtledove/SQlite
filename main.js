@@ -36,5 +36,10 @@ const populateEmployees = () => {
 // });
 
 db.all(`SELECT * FROM employees`, (err, allRows) => {
-  console.log(allRows);
+  allRows.forEach(( { id, firstname, lastname, dept, salary } ) => {
+    console.log(`Employee ${id} is ${firstname} ${lastname}, they work in the ${dept} dept and make ${salary}`);
+
+  });
+
+
 });
