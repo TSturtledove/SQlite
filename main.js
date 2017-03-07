@@ -29,4 +29,12 @@ const populateEmployees = () => {
   })
 
 };
-populateEmployees();
+// populateEmployees();
+
+// db.get(`SELECT * FROM employees`, (err, row) => {
+//   console.log(row);
+// });
+
+db.all(`SELECT * FROM employees`, (err, allRows) => {
+  console.log(allRows);
+});
